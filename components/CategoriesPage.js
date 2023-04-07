@@ -1,76 +1,69 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { activities } from './Activities.js';
 import CategoryCard from './CategoryCard';
-import OutdoorAdventures from './categories/OutdoorAdventures';
-import CulturalExperiences from './categories/CulturalExperiences';
-import WaterSports from './categories/WaterSports';
-import ParksAndWildlife from './categories/ParksAndWildlife';
-import Beaches from './categories/Beaches';
-import FamilyFun from './categories/FamilyFun';
-import Sightseeing from './categories/Sightseeing';
-import HistoricalSites from './categories/HistoricalSites';
-import { useNavigate } from 'react-router-dom';
 
+const categories = [
+  {
+    id: 1,
+    title: 'Beaches & Sightseeing',
+    image: 'beaches_sightseeing.jpg',
+    description: 'Discover beautiful beaches and scenic lookouts around Guam.',
+  },
+  {
+    id: 2,
+    title: 'Water Activities',
+    image: 'water_activities.jpg',
+    description: 'Enjoy snorkeling, scuba diving, and other water-based activities.',
+  },
+  {
+    id: 3,
+    title: 'Wildlife & Nature',
+    image: 'wildlife_nature.jpg',
+    description: 'Explore Guam\'s diverse wildlife and natural landscapes.',
+  },
+  {
+    id: 4,
+    title: 'Cultural Experiences & Historical Sites',
+    image: 'cultural_experiences.jpg',
+    description: 'Immerse yourself in Guam\'s rich history, culture, and heritage.',
+  },
+  {
+    id: 5,
+    title: 'Outdoor Activities',
+    image: 'outdoor_activities.jpg',
+    description: 'Experience hiking, caving, and other outdoor adventures.',
+  },
+  {
+    id: 6,
+    title: 'Amusement Parks',
+    image: 'amusement_parks.jpg',
+    description: 'Visit water parks and other amusement parks in Guam.',
+  },
+  {
+    id: 7,
+    title: 'Motorsports',
+    image: 'motorsports.jpg',
+    description: 'Enjoy motor racing and other motorsports activities.',
+  },
+  {
+    id: 8,
+    title: 'Shopping',
+    image: 'shopping.jpg',
+    description: 'Shop at popular retailers, local markets, and shopping centers.',
+  },
+];
 
-const CategoriesPage = () => {
-  const categories = [
-    {
-      title: 'Outdoor Adventures',
-      imgSrc: require('../images/outdoor-adventures.jpg'),
-    },
-    {
-      title: 'Cultural Experiences',
-      imgSrc: require('../images/cultural-experiences.jpg'),
-    },
-    {
-      title: 'Sightseeing',
-      imgSrc: require('../images/sightseeing.jpg'),
-    },
-    {
-      title: 'Water Sports',
-      imgSrc: require('../images/water-sports.jpg'),
-    },
-    {
-      title: 'Beaches',
-      imgSrc: require('../images/beaches.jpg'),
-    },
-    {
-      title: 'Parks And Wildlife',
-      imgSrc: require('../images/parks-and-wildlife.jpg'),
-    },
-    {
-      title: 'Historical Sites',
-      imgSrc: require('../images/historical-sites.jpg'),
-    },
-    {
-      title: 'Family Fun',
-      imgSrc: require('../images/family-fun.jpg'),
-    },
-  ];
-  const navigate = useNavigate();
-
-  const handleClick = (category) => {
-    navigate(`/categories/${category}`);
-  };
-
+const CategoryPage = () => {
   return (
-    <div className="categories-page">
-      <h1>Activities</h1>
-      <div className="category-grid">
-        {categories.map((category, index) => (
-          <Link
-            key={index}
-            to={`/categories/${category.title.toLowerCase().replace(/ /g, '-')}`}
-          >
-            <CategoryCard
-              category={category.title}
-              imgSrc={category.imgSrc}
-            />
-          </Link>
+    <div className="category-page">
+      <h2>Categories</h2>
+      <div className="category-list">
+        {categories.map((category) => (
+          <CategoryCard key={category.id} category={category} />
         ))}
       </div>
     </div>
   );
 };
 
-export default CategoriesPage;
+export default CategoryPage;
