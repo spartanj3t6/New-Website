@@ -1,4 +1,4 @@
-// src/components/CategoryGrid.js
+//CategoryGrid.js
 
 import React from 'react';
 import './CategoryGrid.css';

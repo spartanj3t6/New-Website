@@ -1,4 +1,4 @@
-// src/components/HomePage.js
+//HomePage.js
 
 import React from 'react';
 import FeatureImage from './FeatureImage';

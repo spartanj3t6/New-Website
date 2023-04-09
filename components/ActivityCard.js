@@ -1,4 +1,4 @@
-// src/components/ActivityCard.js
+//ActivityCard.js
 
 import React from 'react';
 import '../App.css';

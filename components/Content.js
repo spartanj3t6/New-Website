@@ -1,3 +1,5 @@
+//Content.js
+
 import React from 'react';
 import FeatureImage from './FeatureImage';
 

@@ -1,3 +1,5 @@
+//Activities.js
+
 const activities = [
   {
     id: 1,

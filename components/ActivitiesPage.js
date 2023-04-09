@@ -1,4 +1,4 @@
-// src/components/ActivitiesPage.js
+//ActivitiesPage.js
 
 import React from 'react';
 import activities from './Activities';

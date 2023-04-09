@@ -1,3 +1,5 @@
+//CategoriesPage.js
+
 import React from 'react';
 import { activities } from './Activities.js';
 import CategoryCard from './CategoryCard';

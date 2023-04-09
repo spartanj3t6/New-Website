@@ -1,4 +1,4 @@
-// src/components/AboutPage.js
+// AboutPage.js
 
 import React from 'react';
 import About from './About';
