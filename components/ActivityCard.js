@@ -1,4 +1,4 @@
-//ActivityCard.js
+// ActivityCard.js
 
 import React from 'react';
 import '../App.css';
@@ -8,12 +8,16 @@ function ActivityCard({ title, description, provider, website }) {
     <div className="activity-card">
       <h3>{title}</h3>
       <p className="description">{description}</p>
-      <p>
-        <strong>Recommended Provider:</strong> {provider}
-      </p>
-      <p>
-        <strong>Website:</strong> <a href={website}>{website}</a>
-      </p>
+      {provider && (
+        <p>
+          <strong>Recommended Provider:</strong> {provider}
+        </p>
+      )}
+      {website && (
+        <p>
+          <strong>Website:</strong> <a href={website}>{website}</a>
+        </p>
+      )}
     </div>
   );
 }

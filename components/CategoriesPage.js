@@ -1,59 +1,27 @@
-//CategoriesPage.js
+// CategoriesPage.js
 
 import React from 'react';
-import { activities } from './Activities.js';
-import CategoryCard from './CategoryCard';
+import { Link } from 'react-router-dom';
+import activities from './Activities.js';
+import CategoryCard from './CategoryCard'; // Import CategoryCard here
+import './CategoriesPage.css'; // Import CSS here
+import CategoryGrid from './CategoryGrid';
+import beachesImg from '../images/beaches.jpg';
+import culturalexperiencesImg from '../images/cultural_experiences.jpg';
+import outdooradventuresImg from '../images/outdoor_adventures.jpg';
+import watersportsImg from '../images/water_sports.jpg';
+import foodwineexperiencesimg from '../images/food_wine_experiences.jpg';
+import nightlifeentertainmentImg from '../images/nightlife_entertainment.jpg';
 
-const categories = [
-  {
-    id: 1,
-    title: 'Beaches & Sightseeing',
-    image: 'beaches_sightseeing.jpg',
-    description: 'Discover beautiful beaches and scenic lookouts around Guam.',
-  },
-  {
-    id: 2,
-    title: 'Water Activities',
-    image: 'water_activities.jpg',
-    description: 'Enjoy snorkeling, scuba diving, and other water-based activities.',
-  },
-  {
-    id: 3,
-    title: 'Wildlife & Nature',
-    image: 'wildlife_nature.jpg',
-    description: 'Explore Guam\'s diverse wildlife and natural landscapes.',
-  },
-  {
-    id: 4,
-    title: 'Cultural Experiences & Historical Sites',
-    image: 'cultural_experiences.jpg',
-    description: 'Immerse yourself in Guam\'s rich history, culture, and heritage.',
-  },
-  {
-    id: 5,
-    title: 'Outdoor Activities',
-    image: 'outdoor_activities.jpg',
-    description: 'Experience hiking, caving, and other outdoor adventures.',
-  },
-  {
-    id: 6,
-    title: 'Amusement Parks',
-    image: 'amusement_parks.jpg',
-    description: 'Visit water parks and other amusement parks in Guam.',
-  },
-  {
-    id: 7,
-    title: 'Motorsports',
-    image: 'motorsports.jpg',
-    description: 'Enjoy motor racing and other motorsports activities.',
-  },
-  {
-    id: 8,
-    title: 'Shopping',
-    image: 'shopping.jpg',
-    description: 'Shop at popular retailers, local markets, and shopping centers.',
-  },
-];
+  const categories = [
+    { name: 'beaches_and_sightseeing', title: 'Beaches & Sightseeing', image: beachesImg },
+    { name: 'cultural_experiences_and_historical_sites', title: 'Cultural Experiences & Historical Sites', image: culturalexperiencesImg },
+    { name: 'hiking_and_outdoor_adventures', title: 'Hiking & Outdoor Adventures', image: outdooradventuresImg },
+    { name: 'water_activities', title: 'Water Activities', image: watersportsImg },
+    { name: 'food_wine_experiences', title: 'Food & Wine Experiences', image: foodwineexperiencesimg},
+    { name: 'nightlife_entertainment', title: 'Nightlife & Entertainment', image: nightlifeentertainmentImg},
+  ];
+  
 
 const CategoryPage = () => {
   return (
@@ -61,7 +29,17 @@ const CategoryPage = () => {
       <h2>Categories</h2>
       <div className="category-list">
         {categories.map((category) => (
-          <CategoryCard key={category.id} category={category} />
+          <Link
+            key={category.name}
+            to={`/categories/${category.name}`} // Use category.name instead of category.title
+            style={{ textDecoration: 'none' }} // Remove link styles
+          >
+            <CategoryCard
+              title={category.title}
+              image={category.image}
+              description={category.description}
+            />
+          </Link>
         ))}
       </div>
     </div>

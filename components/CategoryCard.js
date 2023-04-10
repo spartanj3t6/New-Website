@@ -1,13 +1,13 @@
-//CategoryCard.js
+// CategoryCard.js
 
 import React from 'react';
+import './CategoryCard.css';
 
 const CategoryCard = ({ title, image, description }) => {
   return (
     <div className="category-card">
-      <h3>{title}</h3>
-      <img src={image} alt={title} />
-      <p>{description}</p>
+      <img className="category-image" src={image} alt={title} />
+      <h3 className="category-title">{title}</h3>
     </div>
   );
 };
